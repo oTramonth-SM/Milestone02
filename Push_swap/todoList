@@ -1,0 +1,25 @@
+
+Operacoes:
+
+
+sa (swap A) troca apenas 1ø e 2ø Objs da stack A
+
+sb (swap B) troca apensa 1ø e 2ø Objs da stack B
+
+ss (swap A & B) troca o 1ø e 2ø Objs da stack A e B
+
+pa (push A) pega o primeiro elemento da stack B e coloca na primeiro posição da stack A (nao funciona se a stack B vazia)
+
+pb (push B) pega o primeiro elemento da stack A e coloca na primeiro posição da stack B (nao funciona se a stack A vazia)
+
+ra (rotate A) avança a posição de todos os elementos da stack A em 1, entao o primeiro se torna o ulimo
+
+rb (rotate B) avança a posição de todos os elementos da stack B em 1, entao o primeiro se torna o ulimo
+
+rr (rotate A & B) avança a posição de todos os elementos da stack A e B em 1
+
+rra (reverse rotate A) retrocede a posição de todos os elementos da stack A em 1, entao o ultimo se torna o primeiro
+
+rrb (reverse rotate B) retrocede a posição de todos os elementos da stack A em 1, entao o ultimo se torna o primeiro
+
+rrr (reverse rotate A & B) retrocede a posição de todos os elementos da stack A e B em 1
