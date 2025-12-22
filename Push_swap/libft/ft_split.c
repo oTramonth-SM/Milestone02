@@ -6,7 +6,7 @@
 /*   By: zmartins <zmartins@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 15:00:24 by zmartins          #+#    #+#             */
-/*   Updated: 2025/08/21 15:16:04 by zmartins         ###   ########.fr       */
+/*   Updated: 2025/12/22 18:58:34 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,12 @@ static int	ft_wrdcnt(const char *s, char c)
 
 static char	*ft_slicer(const char *s, int len)
 {
+	static int cursor;
 	int		i;
 	char	*str;
 
 	i = 0;
+	cursor = 0;
 	str = (char *)malloc(len + 1);
 	if (!str)
 		return (NULL);
@@ -48,22 +50,10 @@ static char	*ft_slicer(const char *s, int len)
 	{
 		str[i] = s[i];
 		i++;
+		cursor++;
 	}
 	str[i] = '\0';
 	return (str);
-}
-
-void	ft_memfree(char **str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
 }
 
 char	**ft_split(const char *s, char c)
@@ -89,8 +79,6 @@ char	**ft_split(const char *s, char c)
 			w++;
 		if (j < w)
 			str[p++] = ft_slicer(s + j, w - j);
-		else
-			ft_memfree(str);
 	}
 	return (str);
 }

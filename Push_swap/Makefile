@@ -6,14 +6,16 @@
 #    By: zmartins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 20:02:34 by zmartins          #+#    #+#              #
-#    Updated: 2025/12/18 16:39:56 by zmartins         ###   ########.fr        #
+#    Updated: 2025/12/22 19:16:10 by zmartins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRC_FILES = push_swap.c\
+			main.c\
 			stack_handler.c\
+			utils.c\
 
 OBJ_FILES = $(SRC_FILES:.c=.o)
 

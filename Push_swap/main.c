@@ -6,16 +6,16 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:32:57 by zmartins          #+#    #+#             */
-/*   Updated: 2025/12/18 15:41:33 by zmartins         ###   ########.fr       */
+/*   Updated: 2025/12/22 18:49:36 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push.h"
+#include "push_swap.h"
 
 int	main(int argc, char **argv)
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
+	t_stack	*a;
+	t_stack	*b;
 
 	a = NULL;
 	b = NULL;
@@ -26,9 +26,9 @@ int	main(int argc, char **argv)
 	init_stack_a(&a, argv + 1);
 	if (!stack_sort(a))
 	{
-		if (stack_len(a) == 2)
+		if (stack_len(a, 0) == 2)
 			sa(&a, false);
-		else f (stack_len(a) == 3)
+		else if (stack_len(a, 0) == 3)
 			sort_three(&a);
 		else
 			sort_stacks(&a, &b);
