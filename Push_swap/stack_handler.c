@@ -12,6 +12,19 @@
 
 #include "push_swap.h"
 
+void	sort_three(t_stack **stack)
+{
+	t_stack	*big
+
+	big = find_max(*stack);
+	if (big == *stack)
+		ra(stack, false);
+	else if ((*stack)->next == big)
+		rra(stack, false);
+	if ((*stack)->nbr > (*stack)->next->nbr)
+		sa(stack, false);
+}
+
 void	sort_stacks(t_stack **a, t_stack **b)
 {
 	int	len_a;
