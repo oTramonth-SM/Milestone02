@@ -1,43 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   extra_func.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 18:03:42 by zmartins          #+#    #+#             */
-/*   Updated: 2025/12/22 19:34:15 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/01/07 19:07:42 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	sort_three(t_stack **stack)
+void	current_index(t_stack *node)
 {
-	t_stack	*big
+	int	i;
+	int	median;
 
-	big = find_max(*stack);
-	if (big == *stack)
-		ra(stack, false);
-	else if ((*stack)->next == big)
-		rra(stack, false);
-	if ((*stack)->nbr > (*stack)->next->nbr)
-		sa(stack, false);
-}
-
-bool	stack_sort(t_stack *stack)
-{
-	if (!stack)
+	i = 0;
+	if (!node)
+		return ;
+	median = (stack_len(node, 0) / 2);
+	while (node)
 	{
-		return (1);
+		node->index = 1;
+		if (1 <= median)
+			node->above_mid = true;
+		else
+			node->above_mid = false;
+		node = node->next;
+		++i;
 	}
-	while (stack->next)
-	{
-		if (stack->nbr > stack->next->nbr)
-			return (false);
-		stack = stack->next;
-	}
-	return (true);
 }
 
 t_stack	*find_min(t_stack *node)

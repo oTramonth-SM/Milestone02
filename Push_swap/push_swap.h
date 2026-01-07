@@ -6,7 +6,7 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 20:03:35 by zmartins          #+#    #+#             */
-/*   Updated: 2025/12/22 19:38:26 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/01/07 18:57:06 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <stdbool.h>
 # include <limits.h>
-# include "libft/libft.h"
-# include "printf/ft_printf.h"
+# include "include/libft.h"
+# include "include/ft_printf.h"
 
 typedef struct	s_stack_node
 {
