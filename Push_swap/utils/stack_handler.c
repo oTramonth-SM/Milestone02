@@ -6,7 +6,7 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 16:11:04 by zmartins          #+#    #+#             */
-/*   Updated: 2026/01/07 19:10:05 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/01/08 17:11:09 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	*init_stack_a(t_stack **stk, char **str)
 
 	while (str[i])
 	{
-		if (error_syntax(argv[i]))
+		if (error_syntax(str[i]))
 			free_errors(stk);
 		if (nbr > INT_MAX || nbr < INT_MIN)
 			free_errors(stk);

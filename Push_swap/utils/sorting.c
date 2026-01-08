@@ -6,11 +6,32 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 18:48:20 by zmartins          #+#    #+#             */
-/*   Updated: 2026/01/07 19:37:38 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/01/08 18:30:03 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	move_stack_a_to_b(t_stack **node_a, t_stack **node_b)
+{
+	t_stack		*cheapest_nd;
+
+	cheapest_nd = get_cheapest(*node_a);
+	if (cheapest_nd->above_mid && cheapest_nd->target_nd->above_mid)
+		rotate_both(node_a, node_b, cheapest_nd);
+	else if (!(cheapest_nd->above_mid)
+				&& !(cheapest_nd->target_nd->above_mid))
+		rev_rotate_both(node_a, node_b, cheapest_nd);
+	prep_for_push(node_a, cheapest_nd, 'a');
+	prep_for_push(node_b, cheapest_nd, 'b');
+	pb(node_b, node_a, false);
+}
+
+static void	move_stack_b_to_a(t_stack **node_a, t_stack **node_b)
+{
+	prep_for_push(node_a, (*b)->target_node, 'a');
+	pb(node_a, node_b, false);
+}
 
 void	sort_three(t_stack **stack)
 {
