@@ -1,7 +1,6 @@
 
 Operacoes:
 
-
 sa (swap A) troca apenas 1ø e 2ø Objs da stack A
 
 sb (swap B) troca apensa 1ø e 2ø Objs da stack B

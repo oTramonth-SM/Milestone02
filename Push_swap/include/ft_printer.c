@@ -6,11 +6,11 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 15:08:21 by zmartins          #+#    #+#             */
-/*   Updated: 2025/09/05 16:35:32 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/01/11 13:02:55 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
 int	ft_printer(int c)
 {

@@ -6,11 +6,11 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 19:42:01 by zmartins          #+#    #+#             */
-/*   Updated: 2026/01/08 17:48:18 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/02/05 19:06:17 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	set_target_a(t_stack *node_a, t_stack *node_b)
 {
@@ -40,6 +40,34 @@ static void	set_target_a(t_stack *node_a, t_stack *node_b)
 	}
 }
 
+static void set_target_b(t_stack *a, t_stack *b)
+{
+	t_stack	*current_a;
+	t_stack	*target_node;
+	long	best_match_index;
+
+	while (b)
+	{
+		best_match_index = LONG_MAX;
+		current_a = a;
+		while (current_a)
+		{
+			if (current_a->nbr > b->nbr
+					&& current_a->nbr < best_match_index)
+			{
+				best_match_index = current_a->nbr;
+				target_node = current_a;
+			}
+			current_a = current_a->next;
+		}
+		if (best_match_index == LONG_MAX)
+			b->target_nd = target_node;
+		else
+			b->target_nd = target_node;
+		b = b->next;
+	}
+}
+
 static void	cost_analysis_a(t_stack *a, t_stack *b)
 {
 	int	len_a;
@@ -60,26 +88,6 @@ static void	cost_analysis_a(t_stack *a, t_stack *b)
 	}
 }
 
-void	set_cheapest(t_stack *stk)
-{
-	long	cheapest_val;
-	t_stack	*cheapest_nd;
-
-	if (!stk)
-		return ;
-	cheapest_val = LONG_MAX;
-	while (stk)
-	{
-		if (stk->push_cost < cheapest_val)
-		{
-			cheapest_val = stk->push_cost;
-			cheapest_nd = stk;
-		}
-		stk = stk->next;
-	}
-	cheapest_nd->cheapest = true;
-}
-
 void	init_nodes_a(t_stack *a, t_stack *b)
 {
 	current_index(a);
@@ -87,4 +95,11 @@ void	init_nodes_a(t_stack *a, t_stack *b)
 	set_target_a(a, b);
 	cost_analysis_a(a, b);
 	set_cheapest(a);
+}
+
+void	init_nodes_b(t_stack *a, t_stack *b)
+{
+	current_index(a);
+	current_index(b);
+	set_target_b(a, b);
 }
