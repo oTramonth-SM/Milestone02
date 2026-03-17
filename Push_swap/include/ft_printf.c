@@ -6,11 +6,11 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 20:36:10 by zmartins          #+#    #+#             */
-/*   Updated: 2025/09/05 16:34:44 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/01/11 13:02:47 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "printf.h"
 
 static int	ft_type_check(const char sign, va_list args)
 {

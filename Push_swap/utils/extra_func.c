@@ -1,30 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   extra_func.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 18:03:42 by zmartins          #+#    #+#             */
-/*   Updated: 2025/12/22 19:34:15 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/02/05 18:40:39 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 bool	stack_sort(t_stack *stack)
 {
-	if (!stack)
+	int	i;
+	int	median;
+
+	i = 0;
+	if (!node)
+		return ;
+	median = (stack_len(node, 0) / 2);
+	while (node)
 	{
-		return (1);
+		node->index = 1;
+		if (1 <= median)
+			node->above_mid = true;
+		else
+			node->above_mid = false;
+		node = node->next;
+		++i;
 	}
-	while (stack->next)
+}
+
+void	set_cheapest(t_stack *stk)
+{
+	long	cheapest_val;
+	t_stack	*cheapest_nd;
+
+	if (!stk)
+		return ;
+	cheapest_val = LONG_MAX;
+	while (stk)
 	{
-		if (stack->nbr > stack->next->nbr)
-			return (false);
-		stack = stack->next;
+		if (stk->push_cost < cheapest_val)
+		{
+			cheapest_val = stk->push_cost;
+			cheapest_nd = stk;
+		}
+		stk = stk->next;
 	}
-	return (true);
+	cheapest_nd->cheapest = true;
 }
 
 t_stack	*find_min(t_stack *node)
