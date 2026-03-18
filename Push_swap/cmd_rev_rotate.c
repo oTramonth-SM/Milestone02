@@ -1,51 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cmd_push.c                                         :+:      :+:    :+:   */
+/*   cmd_rev_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:32:57 by zmartins          #+#    #+#             */
-/*   Updated: 2026/03/18 15:44:34 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/18 15:46:20 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap.c"
 
-static void	push(t_stack **dst, t_stack **src)
+static void	reverse_rotate(t_stack **stack)
 {
-	t_stack	*node;
+	t_stack	*last;
+	int		len;
 
-	if (*src == NULL)
+	len = stack_len(*stack, 0);
+	if (*stack == NULL || stack == NULL || len == 1)
 		return ;
-	node = *src;
-	*src = (*src)->next;
-	if (*src)
-		(*src)->prev = NULL;
-	node->prev = NULL;
-	if (*dst == NULL)
-	{
-		*dst = node;
-		node->next = NULL;
-	}
-	else
-	{
-		node->next = *dst;
-		node->next->prev = node;
-		*dst = node;
-	}
+	last = find_last_node(*stack);
+	last->prev->next = NULL;
+	last->next = *stack;
+	last->prev = NULL;
+	*stack = last;
+	last->next->prev = last;
 }
 
-void	pa(t_stack **a, t_stack **b, bool checker)
+void	rra(t_stack **a, bool checker)
 {
-	push(a, b);
+	reverse_rotate(a);
 	if (!checker)
-		write(1, "pa\n", 3);
+		write(1, "rra\n", 4);
 }
 
-void pb(t_stack **b, t_stack **a, bool checker)
+void	rrb(t_stack **b, bool checker)
 {
-	push(a, b);
+	reverse_rotate(b);
 	if (!checker)
-		write(1, "pb\n", 3);
+		write(1, "rrb\n", 4);
+}
+
+void	rrr(t_stack **a, t_stack **b, bool checker)
+{
+	reverse_rotate(a);
+	reverse_rotate(b);
+	if (!checker)
+		write(1, "rrr\n", 4);
 }

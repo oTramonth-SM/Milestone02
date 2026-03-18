@@ -6,7 +6,7 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 20:03:35 by zmartins          #+#    #+#             */
-/*   Updated: 2026/02/05 18:35:06 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/18 15:52:06 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct	s_stack_node
 }	t_stack;
 
 t_stack		*find_min(t_stack *node);
+t_stack		*find_last_node(t_stack *head);
 
 void		init_stack_a(t_stack **stk, char **str);
 void		sort_three(t_stack **stack);
@@ -42,6 +43,13 @@ void		sort_stacks(t_stack **a, t_stack **b);
 void		set_cheapest(t_stack *stk);
 void		pa(t_stack **a, t_stack **b, bool checker);
 void		pb(t_stack **b, t_stack **a, bool checker);
+void		rra(t_stack **a, bool checker);
+void		rrb(t_stack **b, bool checker);
+void		rrr(t_stack **a, t_stack **b, bool checker);
+void		ra(t_stack **a, bool checker);
+void		rb(t_stack **b, bool checker);
+void		rr(t_stack **a, t_stack **b, bool checker);
+
 
 long		ft_atol(const char *str);
 

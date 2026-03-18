@@ -6,11 +6,20 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:32:57 by zmartins          #+#    #+#             */
-/*   Updated: 2025/12/22 18:49:36 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/18 15:53:29 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_stack	*find_last_node(t_stack *head)
+{
+	if (head == NULL)
+		return (NULL);
+	while (head->next)
+		head = head->next;
+	return (head);
+}
 
 int	main(int argc, char **argv)
 {
