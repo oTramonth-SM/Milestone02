@@ -6,7 +6,7 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 20:03:35 by zmartins          #+#    #+#             */
-/*   Updated: 2026/03/18 15:52:06 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/19 16:19:55 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 # include <stdbool.h>
 # include <limits.h>
-# include "include/libft.h"
-# include "include/printf.h"
+# include "../include/libft.h"
+# include "../include/printf.h"
 
-typedef struct	s_stack_node
+typedef struct s_stack_node
 {
 	int					nbr;
 	int					index;
@@ -41,15 +41,18 @@ void		current_index(t_stack *node);
 void		rotate_both(t_stack **a, t_stack **b, t_stack *cheapest_node);
 void		sort_stacks(t_stack **a, t_stack **b);
 void		set_cheapest(t_stack *stk);
+
 void		pa(t_stack **a, t_stack **b, bool checker);
 void		pb(t_stack **b, t_stack **a, bool checker);
+void		sa(t_stack **a, bool checker);
+void		sb(t_stack **b, bool checker);
+void		ss(t_stack **a, t_stack **b, bool checker);
 void		rra(t_stack **a, bool checker);
 void		rrb(t_stack **b, bool checker);
 void		rrr(t_stack **a, t_stack **b, bool checker);
 void		ra(t_stack **a, bool checker);
 void		rb(t_stack **b, bool checker);
 void		rr(t_stack **a, t_stack **b, bool checker);
-
 
 long		ft_atol(const char *str);
 

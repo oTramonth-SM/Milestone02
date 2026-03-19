@@ -6,7 +6,7 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 18:03:42 by zmartins          #+#    #+#             */
-/*   Updated: 2026/02/05 18:40:39 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/19 16:32:49 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,6 @@ bool	stack_sort(t_stack *stack)
 		node = node->next;
 		++i;
 	}
-}
-
-void	set_cheapest(t_stack *stk)
-{
-	long	cheapest_val;
-	t_stack	*cheapest_nd;
-
-	if (!stk)
-		return ;
-	cheapest_val = LONG_MAX;
-	while (stk)
-	{
-		if (stk->push_cost < cheapest_val)
-		{
-			cheapest_val = stk->push_cost;
-			cheapest_nd = stk;
-		}
-		stk = stk->next;
-	}
-	cheapest_nd->cheapest = true;
 }
 
 t_stack	*find_min(t_stack *node)

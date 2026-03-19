@@ -6,11 +6,11 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:32:57 by zmartins          #+#    #+#             */
-/*   Updated: 2026/03/18 15:44:34 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/19 15:16:03 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	push(t_stack **dst, t_stack **src)
 {

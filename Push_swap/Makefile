@@ -6,7 +6,7 @@
 #    By: zmartins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 20:02:34 by zmartins          #+#    #+#              #
-#    Updated: 2026/02/03 18:05:06 by zmartins         ###   ########.fr        #
+#    Updated: 2026/03/19 14:53:43 by zmartins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,9 @@ NAME = push_swap
 
 SRC_FILES = push_swap.c\
 			main.c\
+			commands/cmd_push.c\
+			commands/cmd_rev_rotate.c\
+			commands/cmd_rotate.c\
 			utils/stack_handler.c\
 			utils/init.c\
 			utils/sort_three.c\
