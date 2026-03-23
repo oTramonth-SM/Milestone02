@@ -6,7 +6,7 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 16:58:50 by zmartins          #+#    #+#             */
-/*   Updated: 2026/03/19 18:16:41 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/19 18:18:03 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,10 @@ typedef struct s_game
 
 typedef struct s_map_errors
 {
-	int w;
-	int c;
-	int ṕ;
-	int e;
+	int	w;
+	int	c;
+	int	ṕ;
+	int	e;
 }	t_map_errors;
 
 
