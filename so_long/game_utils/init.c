@@ -6,7 +6,7 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 19:00:12 by zmartins          #+#    #+#             */
-/*   Updated: 2026/03/23 19:43:35 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/24 18:52:58 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ void	load_textures(t_game *game)
 			&game->coll_width, &game->coll_height);
 	game->player->txt = mlx_xpm_file_to_image(game->mlx, "textures/player.xpm",
 			&game->player->width, &game->player->height);
-	game->exit_closed_txt = mlx_xpm_file_to_image(game->mlx, "textures/exit_closed.xpm",
-			&game->tile_width, &game->tile_height);
-	game->exit_open_txt = mlx_xpm_file_to_image(game->mlx, "textures/exit_open.xpm",
-			&game->tile_width, &game->tile_height);
+	game->exit_closed_txt = mlx_xpm_file_to_image(game->mlx,
+			"textures/exit_closed.xpm", &game->tile_width, &game->tile_height);
+	game->exit_open_txt = mlx_xpm_file_to_image(game->mlx,
+			"textures/exit_open.xpm", &game->tile_width, &game->tile_height);
 }
 
 t_game	*init_game_structs(int **matrix, int *row_and_column)

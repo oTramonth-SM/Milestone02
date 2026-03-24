@@ -6,11 +6,11 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 18:02:20 by zmartins          #+#    #+#             */
-/*   Updated: 2026/03/23 18:58:25 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/24 18:48:08 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../so_long.h"
+#include "../so_long.h"
 
 void	check_matrix(int **matrix, int row, int column, t_map_errors *error)
 {
@@ -40,7 +40,7 @@ void	check_matrix(int **matrix, int row, int column, t_map_errors *error)
 
 static void	analyze_exit(t_map *matrix, int row, int column, int *reach_exit)
 {
-	if (row < 0 || column < 0|| row>= matrix->row_and_column[0]
+	if (row < 0 || column < 0 || row >= matrix->row_and_column[0]
 		|| column >= matrix->row_and_column[1]
 		|| matrix->matrix[row][column] == 1)
 		return ;
@@ -56,7 +56,8 @@ static void	analyze_exit(t_map *matrix, int row, int column, int *reach_exit)
 	analyze_exit(matrix, row, column + 1, reach_exit);
 }
 
-static void	check_exit(char *map_path, int **matrix, int *index, int *row_and_column)
+static void	check_exit(char *map_path, int **matrix,
+	int *index, int *row_and_column)
 {
 	t_map	*map_temp;
 	int		reach_exit[1];

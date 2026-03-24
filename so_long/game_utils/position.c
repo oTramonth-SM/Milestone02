@@ -6,7 +6,7 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 19:00:13 by zmartins          #+#    #+#             */
-/*   Updated: 2026/03/24 16:56:05 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/24 18:55:05 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,28 +35,28 @@ static int	check_position(int column, int row, t_game *game)
 	return (1);
 }
 
-static void update_position(int keycode, t_player *player, t_game *game)
+static void	update_position(int keycode, t_player *player, t_game *game)
 {
 	if (keycode == W || keycode == UP)
 		if (check_position(player->x, player->y - 1, game))
-			player->y -=1;
+			player->y -= 1;
 	if (keycode == S || keycode == DOWN)
 		if (check_position(player->x, player->y + 1, game))
-			player->y +=1;
+			player->y += 1;
 	if (keycode == A || keycode == LEFT)
 		if (check_position(player->x - 1, player->y, game))
-			player->x -=1;
+			player->x -= 1;
 	if (keycode == D || keycode == RIGHT)
 		if (check_position(player->x + 1, player->y, game))
 			player->x += 1;
 }
 
-int keyboard_events(int key, t_game *game)
+int	keyboard_events(int key, t_game *game)
 {
 	if (key == ESC)
 		quit(game);
-	if (( key == W || key == A || key == S || key == D)
-		|| (key == UP|| key == LEFT|| key == DOWN|| key == RIGHT))
+	if ((key == W || key == A || key == S || key == D)
+		|| (key == UP || key == LEFT || key == DOWN || key == RIGHT))
 		update_position(key, game->player, game);
 	return (0);
 }

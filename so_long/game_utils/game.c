@@ -6,7 +6,7 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 19:00:11 by zmartins          #+#    #+#             */
-/*   Updated: 2026/03/23 19:44:05 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/24 18:52:03 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	quit(t_game *game)
 	free(game);
 	exit(0);
 }
+
 void	check_to_collect(t_game *game)
 {
 	int	column;
@@ -61,7 +62,8 @@ int	callbacks(t_game *game)
 		game->can_exit = 1;
 	if (game->end == 1)
 	{
-		ft_printf("YOU WIN!!! :D\nYou used %d movements...\n", game->player->move_count);
+		ft_printf("YOU WIN!!! :D\nYou used %d movements...\n",
+			game->player->move_count);
 		quit(game);
 	}
 	return (0);
@@ -76,7 +78,7 @@ int	game_start(int **matrix, int *row_and_column)
 	if (!game->mlx)
 		malloc_error(game, matrix, row_and_column);
 	game->window = mlx_new_window(game->mlx, 32 * row_and_column[1],
-		32 * row_and_column[0], "So long and thanks for all the fish");
+			32 * row_and_column[0], "So long and thanks for all the fish");
 	ft_printf("Move with WASD or Arrow Keys.\nCollect all the treasure!\n");
 	load_textures(game);
 	check_to_collect(game);
@@ -84,6 +86,5 @@ int	game_start(int **matrix, int *row_and_column)
 	mlx_hook(game->window, 2, 1L << 0, keyboard_events, game);
 	mlx_hook(game->window, 17, 0, quit, game);
 	mlx_loop(game->mlx);
-	return(0);
+	return (0);
 }
-

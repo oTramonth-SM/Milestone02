@@ -6,7 +6,7 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 16:58:50 by zmartins          #+#    #+#             */
-/*   Updated: 2026/03/24 18:20:46 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/24 18:45:15 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ static void	map_error(int error, int fd, char *temp, char c)
 	}
 }
 
-static int check_char(int c)
+static int	check_char(int c)
 {
 	if (c == '1' || c == '0' || c == 'C'
-		|| c == 'p'|| c == 'E' || c == '\n')
+		|| c == 'p' || c == 'E' || c == '\n')
 		return (1);
 	else
 		return (0);

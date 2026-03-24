@@ -6,7 +6,7 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 16:58:50 by zmartins          #+#    #+#             */
-/*   Updated: 2026/03/24 18:19:30 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/24 18:44:02 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	else
 	{
 		ft_printf("Error\nInvalid Argument");
-		return(0);
+		return (0);
 	}
 	check_extension(row_and_column, matrix, argv[1]);
 	if (matrix_error(matrix, row_and_column[0], row_and_column[1]))
@@ -38,5 +38,5 @@ int	main(int argc, char **argv)
 	}
 	check_map_path(matrix, argv[1], row_and_column);
 	game_start(matrix, row_and_column);
-	return(0);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 16:58:50 by zmartins          #+#    #+#             */
-/*   Updated: 2026/03/24 18:18:05 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/24 18:43:23 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	malloc_error(t_game *game, int **matrix, int *row_and_column)
 {
 	ft_printf("Error\nNot enough memory to allocate\n");
-	if(matrix)
+	if (matrix)
 		free_matrix(matrix, row_and_column[0]);
 	free_game(game);
 	exit(1);

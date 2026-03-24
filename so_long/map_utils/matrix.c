@@ -6,7 +6,7 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 17:36:25 by zmartins          #+#    #+#             */
-/*   Updated: 2026/03/23 18:02:12 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/24 18:46:13 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ int	set_row_and_column(int *row_and_column, char *path, int i)
 			row_and_column[1] += ft_strlen(temp_line) - 1;
 		row_and_column[0]++;
 		i++;
-		if (temp_line[row_and_column[1]] != '\n' && temp_line[row_and_column[1]] != '\0')
+		if (temp_line[row_and_column[1]] != '\n'
+			&& temp_line[row_and_column[1]] != '\0')
 		{
 			free(temp_line);
 			close(fd);
