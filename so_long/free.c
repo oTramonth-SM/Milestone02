@@ -6,7 +6,7 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 16:58:50 by zmartins          #+#    #+#             */
-/*   Updated: 2026/03/19 17:56:09 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/24 18:18:05 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void	free_player(t_player *player, t_game *game)
 {
 	if (player)
 	{
-		if (game->mlx && player->img)
-			mlx_destroy_image(game->mlx, player->img);
+		if (game->mlx && player->txt)
+			mlx_destroy_image(game->mlx, player->txt);
 		free(player);
 	}
 }
@@ -62,16 +62,16 @@ void	free_game(t_game *game)
 		return ;
 	if (game->player)
 		free_player(game->player, game);
-	if (game->mlx && game->wall_img)
-		mlx_destroy_image(game->mlx, game->wall_img);
-	if (game->mlx && game->floor_img)
-		mlx_destroy_image(game->mlx, game->floor_img);
-	if (game->mlx && game->collect_img)
-		mlx_destroy_image(game->mlx, game->collect_img);
-	if (game->mlx && game->exit_open_img)
-		mlx_destroy_image(game->mlx, game->exit_open_img);
-	if (game->mlx && game->exit_closed_img)
-		mlx_destroy_image(game->mlx, game->exit_closed_img);
+	if (game->mlx && game->wall_txt)
+		mlx_destroy_image(game->mlx, game->wall_txt);
+	if (game->mlx && game->floor_txt)
+		mlx_destroy_image(game->mlx, game->floor_txt);
+	if (game->mlx && game->collect_txt)
+		mlx_destroy_image(game->mlx, game->collect_txt);
+	if (game->mlx && game->exit_open_txt)
+		mlx_destroy_image(game->mlx, game->exit_open_txt);
+	if (game->mlx && game->exit_closed_txt)
+		mlx_destroy_image(game->mlx, game->exit_closed_txt);
 	if (game->mlx && game->map)
 		free_map(game->map);
 }

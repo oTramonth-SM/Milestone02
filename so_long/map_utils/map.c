@@ -6,7 +6,7 @@
 /*   By: zmartins <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 16:58:50 by zmartins          #+#    #+#             */
-/*   Updated: 2026/03/19 17:56:09 by zmartins         ###   ########.fr       */
+/*   Updated: 2026/03/24 18:20:46 by zmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,13 @@ static int	validate_line(char *line, int len, int *error, char *error_i)
 	i = 0;
 	while (check_char(line[i]) && i != len)
 		i++;
-		if (line[i] != '\0')
-		{
-			*error = 2;
-			*error_i = line[i];
-			return (0);
-		}
-		return (1);
+	if (line[i] != '\0')
+	{
+		*error = 2;
+		*error_i = line[i];
+		return (0);
+	}
+	return (1);
 }
 
 int	check_map(char *path)
