@@ -6,7 +6,7 @@
 #    By: zmartins <zmartins@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/20 20:52:18 by zmartins          #+#    #+#              #
-#    Updated: 2026/03/23 17:31:12 by zmartins         ###   ########.fr        #
+#    Updated: 2026/03/24 16:34:46 by zmartins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,14 +49,11 @@ SRC = ft_atoi.c\
 	ft_striteri.c\
 	ft_split.c\
 
-SRC_PRINTF = ft_printf.h\
-		ft_printer.c\
+SRC_PRINTF = ft_printer.c\
 		ft_printf.c\
 
 SRC_GNL = get_next_line.c\
-		get_next_line.h\
 		get_next_line_utils.c\
-		main.c\
 
 BNS_SRC = ft_lstnew.c\
 		ft_lstadd_front.c\
